@@ -108,6 +108,7 @@ class ParkingApp(tk.Tk):
         self.canvas_frame.pack(fill=tk.BOTH, expand=True, padx=8, pady=8)
         self.canvas = tk.Canvas(self.canvas_frame, bg="#ffffff", highlightthickness=0)
         self.canvas.pack(fill=tk.BOTH, expand=True)
+        self.canvas.bind("<Configure>", lambda event: self.draw_slots())
 
     def draw_slots(self):
         self.canvas.delete("all")
